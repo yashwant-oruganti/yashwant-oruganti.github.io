@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oruganti Yashwant Kumar — Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:    #0A0A0A;
+  --ink:      #1A1A1A;
+  --mid:      #3D3D3D;
+  --soft:     #6B6B6B;
+  --muted:    #9A9A9A;
+  --line:     #E2E2E2;
+  --bg:       #FAFAF9;
+  --white:    #FFFFFF;
+  --accent:   #C8F135;   /* electric lime — the signature element */
+  --accent2:  #1A1A1A;
+  --tag:      #F0F0EE;
+  --display:  'Syne', sans-serif;
+  --body:     'Inter', sans-serif;
+  --mono:     'JetBrains Mono', monospace;
+}
+
+html { font-size: 13px; }
+
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--ink);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ── HERO HEADER ── */
+header {
+  background: var(--black);
+  color: var(--white);
+  padding: 2.8rem 3rem 2.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: 'YK';
+  position: absolute;
+  right: -0.5rem;
+  bottom: -1.8rem;
+  font-family: var(--display);
+  font-size: 10rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+}
+
+.name {
+  font-family: var(--display);
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.name span {
+  color: var(--accent);
+}
+
+.role-pill {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--black);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 1.4rem;
+}
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.contact-row a {
+  color: var(--accent);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+}
+
+.contact-row span { color: rgba(255,255,255,0.55); }
+
+/* ── LAYOUT ── */
+.body-wrap {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 0;
+  background: var(--white);
+}
+
+.main-col {
+  padding: 2.4rem 2.8rem 2.4rem 3rem;
+  border-right: 1px solid var(--line);
+}
+
+.side-col {
+  padding: 2.4rem 2rem;
+  background: var(--bg);
+}
+
+/* ── SECTION ── */
+.section { margin-bottom: 2rem; }
+
+.section-label {
+  font-family: var(--display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-label::before {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── OBJECTIVE ── */
+.objective-text {
+  font-size: 0.85rem;
+  color: var(--mid);
+  line-height: 1.75;
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+}
+
+/* ── PROJECT CARDS ── */
+.project-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.9rem;
+  background: var(--white);
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.project-card:hover { border-color: var(--accent); }
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 6px 0 0 6px;
+}
+
+.project-name {
+  font-family: var(--display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.project-link {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--soft);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.project-link:hover { color: var(--accent2); }
+
+.project-desc {
+  font-size: 0.77rem;
+  color: var(--mid);
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+.stack-row { display: flex; flex-wrap: wrap; gap: 4px; }
+
+.stack-chip {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  background: var(--tag);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 2px 6px;
+  color: var(--soft);
+}
+
+/* ── EXPERIENCE ── */
+.exp-item {
+  margin-bottom: 1.3rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--line);
+  position: relative;
+}
+
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 1.5px solid var(--white);
+  outline: 1px solid var(--accent);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 3px;
+}
+
+.exp-title {
+  font-family: var(--display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.exp-org {
+  font-size: 0.75rem;
+  color: var(--soft);
+  margin-bottom: 5px;
+}
+
+.exp-date {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.exp-item ul { list-style: none; }
+
+.exp-item ul li {
+  font-size: 0.77rem;
+  color: var(--mid);
+  padding-left: 1em;
+  position: relative;
+  margin-bottom: 3px;
+  line-height: 1.5;
+}
+
+.exp-item ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+/* ── SIDE COLUMN ── */
+.side-section { margin-bottom: 1.8rem; }
+
+.side-label {
+  font-family: var(--display);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── SKILLS SIDE ── */
+.skill-group { margin-bottom: 0.9rem; }
+
+.skill-group-name {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.skill-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+
+.skill-chip {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  background: var(--tag);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 2px 6px;
+  color: var(--mid);
+}
+
+.skill-chip.strong {
+  background: var(--black);
+  color: var(--accent);
+  border-color: var(--black);
+}
+
+/* ── EDUCATION SIDE ── */
+.edu-item { margin-bottom: 1rem; }
+
+.edu-deg {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.edu-inst {
+  font-size: 0.7rem;
+  color: var(--soft);
+  margin-bottom: 2px;
+}
+
+.edu-meta {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--muted);
+}
+
+.cgpa-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--black);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+}
+
+/* ── CERT / ACHIEVEMENT ── */
+.list-item {
+  font-size: 0.72rem;
+  color: var(--mid);
+  padding: 4px 0;
+  border-bottom: 1px solid var(--line);
+  line-height: 1.4;
+}
+
+.list-item:last-child { border-bottom: none; }
+
+/* ── LANG ── */
+.lang-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  font-size: 0.72rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.lang-row:last-child { border-bottom: none; }
+
+.lang-name { font-weight: 600; color: var(--ink); }
+.lang-level { color: var(--muted); font-size: 0.65rem; font-family: var(--mono); }
+
+/* ── PRINT ── */
+@media print {
+  body { font-size: 11px; }
+  header { padding: 1.8rem 2rem; }
+  header::after { display: none; }
+  .main-col { padding: 1.6rem 2rem; }
+  .side-col { padding: 1.6rem 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="name">Oruganti <span>Yashwant</span> Kumar</div>
+  <div class="role-pill">Full Stack Developer · Python · REST APIs · ECE 2026</div>
+  <div class="contact-row">
+    <span>+91 6302882976</span>
+    <span>orugantiyashwantkumar@gmail.com</span>
+    <span>Visakhapatnam, AP</span>
+    <a href="https://yashwant-oruganti.github.io">yashwant-oruganti.github.io</a>
+    <a href="https://linkedin.com/in/yashwant-kumar-oruganti-271617296">LinkedIn</a>
+  </div>
+</header>
+
+<!-- BODY -->
+<div class="body-wrap">
+
+  <!-- MAIN COLUMN -->
+  <div class="main-col">
+
+    <!-- CAREER OBJECTIVE -->
+    <div class="section">
+      <div class="section-label">Career Objective</div>
+      <p class="objective-text">
+        A 2026 Electronics and Communication Engineering graduate with a hands-on foundation in Python web development, REST APIs, and database-driven applications. I have built and shipped real projects during my studies — including a full-stack QR retail system — and I am looking to apply these skills as I begin my professional journey. I work well in teams, learn fast, and am genuinely excited to grow in a structured engineering environment.
+      </p>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section">
+      <div class="section-label">Projects</div>
+
+      <div class="project-card">
+        <div class="project-name">QR QuickShop — Python Web Application</div>
+        <a class="project-link" href="https://github.com/yashwant-oruganti/qr-quickshop">github.com/yashwant-oruganti/qr-quickshop</a>
+        <p class="project-desc">QR-based shopping and billing system — customers scan codes to browse and cart products; workers manage live orders via a real-time dashboard. Built solo, end-to-end during internship.</p>
+        <div class="stack-row">
+          <span class="stack-chip">Python</span><span class="stack-chip">Flask</span><span class="stack-chip">SQLite</span>
+          <span class="stack-chip">SQLAlchemy</span><span class="stack-chip">HTML5/CSS3</span>
+          <span class="stack-chip">JavaScript</span><span class="stack-chip">REST APIs</span><span class="stack-chip">OOP</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">Tank Water Level Automation — PLC & SCADA</div>
+        <p class="project-desc">Industrial process control system with dual inlet valves, heating/cooling coils, and stirrer motor. PLC ladder logic handles safety interlocks and timers; SCADA interface provides real-time monitoring and manual/auto switching.</p>
+        <div class="stack-row">
+          <span class="stack-chip">Siemens S7-1200 PLC</span><span class="stack-chip">TIA Portal</span>
+          <span class="stack-chip">Ladder Logic</span><span class="stack-chip">SCADA</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">RFID Door Locking System</div>
+        <p class="project-desc">Hardware-software access control system — RFID reader validates tags against a stored dataset and controls an electromechanical lock. Error handling for invalid and unknown tags included.</p>
+        <div class="stack-row">
+          <span class="stack-chip">C++</span><span class="stack-chip">OOP</span>
+          <span class="stack-chip">Arduino Uno</span><span class="stack-chip">RFID RC522</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- INTERNSHIPS -->
+    <div class="section">
+      <div class="section-label">Internships & Training</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Full Stack Python Development Intern</div>
+          <span class="exp-date">May – Sept 2025</span>
+        </div>
+        <div class="exp-org">Study Internship</div>
+        <ul>
+          <li>Developed Python web applications using Flask/Django covering backend logic, REST API development, and SQLite database integration.</li>
+          <li>Built frontend interfaces with HTML5/CSS3/JavaScript connected to backend via JSON APIs.</li>
+          <li>Wrote test cases, performed debugging, and maintained project documentation throughout development.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Industrial Automation & IoT Training</div>
+          <span class="exp-date">Feb 2026 – Present</span>
+        </div>
+        <div class="exp-org">CEMS — Center of Excellence in Maritime & Shipbuilding</div>
+        <ul>
+          <li>Learning to program Siemens S7-1200 PLC using TIA Portal — ladder logic, timers, and safety interlocks.</li>
+          <li>Interfacing sensors and actuators; exploring PLC–IoT integration concepts.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Telecommunication Intern</div>
+          <span class="exp-date">May 2024</span>
+        </div>
+        <div class="exp-org">BSNL — Bharat Sanchar Nigam Limited</div>
+        <ul>
+          <li>Studied GSM, broadband, and optical fiber infrastructure; documented network architecture and data transmission workflows.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Broadcasting Intern</div>
+          <span class="exp-date">May – Jun 2024</span>
+        </div>
+        <div class="exp-org">All India Radio (AIR)</div>
+        <ul>
+          <li>Assisted with AM/FM transmission operations, studio coordination, and documentation of modulation workflows.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SIDE COLUMN -->
+  <div class="side-col">
+
+    <!-- SKILLS -->
+    <div class="side-section">
+      <div class="side-label">Core Skills</div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Backend</div>
+        <div class="skill-chips">
+          <span class="skill-chip strong">Python</span>
+          <span class="skill-chip strong">Flask</span>
+          <span class="skill-chip strong">Django</span>
+          <span class="skill-chip strong">REST APIs</span>
+          <span class="skill-chip strong">OOP</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Frontend</div>
+        <div class="skill-chips">
+          <span class="skill-chip strong">HTML5</span>
+          <span class="skill-chip strong">CSS3</span>
+          <span class="skill-chip strong">JavaScript</span>
+          <span class="skill-chip">JSON / REST</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Database</div>
+        <div class="skill-chips">
+          <span class="skill-chip strong">SQL</span>
+          <span class="skill-chip strong">SQLite</span>
+          <span class="skill-chip">SQLAlchemy</span>
+          <span class="skill-chip">Schema Design</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Languages</div>
+        <div class="skill-chips">
+          <span class="skill-chip strong">Python</span>
+          <span class="skill-chip">C</span>
+          <span class="skill-chip">C++</span>
+          <span class="skill-chip">Java (Basic)</span>
+          <span class="skill-chip">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Tools & DevOps</div>
+        <div class="skill-chips">
+          <span class="skill-chip strong">Git</span>
+          <span class="skill-chip strong">GitHub</span>
+          <span class="skill-chip">VS Code</span>
+          <span class="skill-chip">MS Office</span>
+          <span class="skill-chip">Google Workspace</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Embedded & Industrial</div>
+        <div class="skill-chips">
+          <span class="skill-chip">PLC S7-1200</span>
+          <span class="skill-chip">SCADA</span>
+          <span class="skill-chip">Arduino</span>
+          <span class="skill-chip">IoT</span>
+          <span class="skill-chip">TIA Portal</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="side-section">
+      <div class="side-label">Education</div>
+
+      <div class="edu-item">
+        <div class="edu-deg">B.Tech — Electronics & Communication Engineering <span class="cgpa-badge">8.15</span></div>
+        <div class="edu-inst">Dr. Lankapalli Bullayya College of Engineering, Visakhapatnam</div>
+        <div class="edu-meta">Oct 2022 – Jun 2026 · Graduating 2026</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-deg">Intermediate MPC <span class="cgpa-badge">81%</span></div>
+        <div class="edu-inst">Sri Chaitanya Group of Institutions</div>
+        <div class="edu-meta">2020 – 2022</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-deg">CBSE Class X <span class="cgpa-badge">78%</span></div>
+        <div class="edu-inst">Narayana e-Techno School</div>
+        <div class="edu-meta">2019 – 2020</div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="side-section">
+      <div class="side-label">Certifications</div>
+      <div class="list-item">Python (Basic) — HackerRank</div>
+      <div class="list-item">Python for Beginners — Infosys Springboard</div>
+      <div class="list-item">Python Programming — Infosys Springboard</div>
+      <div class="list-item">Speaking Confidently — LinkedIn Learning</div>
+      <div class="list-item">Microsensors & Nanosensors — NPTEL IIT Madras</div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <div class="side-section">
+      <div class="side-label">Achievements</div>
+      <div class="list-item">1st Prize — Technical Quiz, LBCE</div>
+      <div class="list-item">3rd Prize — Poster Presentation, LBCE</div>
+      <div class="list-item">3rd Prize — Model Presentation, LBCE</div>
+      <div class="list-item">Student Member — IQAC, LBCE (2022–2026)</div>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div class="side-section">
+      <div class="side-label">Languages</div>
+      <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Professional</span></div>
+      <div class="lang-row"><span class="lang-name">Telugu</span><span class="lang-level">Native</span></div>
+      <div class="lang-row"><span class="lang-name">Hindi</span><span class="lang-level">Basic</span></div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
